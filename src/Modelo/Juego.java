@@ -1,6 +1,5 @@
 package Modelo;
 
-public class Juego {
     public class Juego {
         private String nombre;
         private String categoria;
@@ -15,7 +14,7 @@ public class Juego {
             this.tamanio = tamanio;
             this.precio = precio;
             this.licenciasDisponibles = licenciasDisponibles;
-            licenciasVendidas=0;
+            licenciasVendidas = 0;
         }
 
         public String getNombre() {
@@ -43,35 +42,35 @@ public class Juego {
         }
 
         public void setNombre(String nombre) {
-            if(nombre!=null && !nombre.trim().isEmpty())
+            if (nombre != null && !nombre.trim().isEmpty())
                 this.nombre = nombre;
         }
 
         public void setCategoria(String categoria) {
-            if(nombre!=null && !nombre.trim().isEmpty())
+            if (nombre != null && !nombre.trim().isEmpty())
                 this.categoria = categoria;
         }
 
         public void setTamanio(int tamanio) {
-            if(tamanio > 0)
+            if (tamanio > 0)
                 this.tamanio = tamanio;
         }
 
         public void setPrecio(double precio) {
-            if(precio > 0)
+            if (precio > 0)
                 this.precio = precio;
         }
 
-        public boolean comprar(int cantidad){
-            if (cantidad > 0){
+        public boolean comprar(int cantidad) {
+            if (cantidad > 0) {
                 licenciasDisponibles += cantidad;
                 return true;
             }
             return false;
         }
 
-        public boolean vender(int cantidad){
-            if(cantidad > 0 && cantidad <= licenciasDisponibles){
+        public boolean vender(int cantidad) {
+            if (cantidad > 0 && cantidad <= licenciasDisponibles) {
                 licenciasDisponibles -= cantidad;
                 licenciasVendidas += cantidad;
                 return true;
@@ -89,6 +88,6 @@ public class Juego {
                     ", licenciasVendidas=" + licenciasVendidas +
                     ", licenciasDisponibles=" + licenciasDisponibles +
 
-             '}';
+                    '}';
         }
-}
+    }

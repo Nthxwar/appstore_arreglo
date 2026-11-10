@@ -1,7 +1,7 @@
 package Modelo;
 
 public class AppStore {
-    public class AppStore {
+
         private static final int MAX = 4;
         private Juego juegos[];
         private int indice;
@@ -47,5 +47,5 @@ public class AppStore {
             }
             return false;
         }
-    }
+
 }
