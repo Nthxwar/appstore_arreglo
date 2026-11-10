@@ -1,5 +1,7 @@
 package Modelo;
 
+import Modelo.Juego;
+
 public class AppStore {
 
         private static final int MAX = 4;
@@ -31,7 +33,7 @@ public class AppStore {
 
         public Juego buscarJuego(String nombre){
             for(int i = 0; i < indice; i++){
-                if(juegos[i].getNombre().equalsIgnoreCase(nombre){
+                if(juegos[i].getNombre().equalsIgnoreCase(nombre)){
                     return juegos[1];
                 }
             }
