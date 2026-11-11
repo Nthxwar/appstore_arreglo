@@ -9,12 +9,15 @@ package Modelo;
         private int licenciasDisponibles;
 
         public Juego(String nombre, String categoria, int tamanio, double precio, int licenciasDisponibles) {
-            this.nombre = nombre;
-            this.categoria = categoria;
-            this.tamanio = tamanio;
-            this.precio = precio;
-            this.licenciasDisponibles = licenciasDisponibles;
-            licenciasVendidas = 0;
+            setNombre(nombre);
+            setCategoria(categoria);
+            setTamanio(tamanio);
+            setPrecio(precio);
+
+            if (licenciasDisponibles >= 0)
+                this.licenciasDisponibles = licenciasDisponibles;
+
+            licenciasVendidas=0;
         }
 
         public String getNombre() {
@@ -42,35 +45,35 @@ package Modelo;
         }
 
         public void setNombre(String nombre) {
-            if (nombre != null && !nombre.trim().isEmpty())
+            if(nombre!=null && !nombre.trim().isEmpty())
                 this.nombre = nombre;
         }
 
         public void setCategoria(String categoria) {
-            if (nombre != null && !nombre.trim().isEmpty())
+            if(categoria!=null && !categoria.trim().isEmpty())
                 this.categoria = categoria;
         }
 
         public void setTamanio(int tamanio) {
-            if (tamanio > 0)
+            if(tamanio > 0)
                 this.tamanio = tamanio;
         }
 
         public void setPrecio(double precio) {
-            if (precio > 0)
+            if(precio > 0)
                 this.precio = precio;
         }
 
-        public boolean comprar(int cantidad) {
-            if (cantidad > 0) {
+        public boolean comprar(int cantidad){
+            if (cantidad > 0){
                 licenciasDisponibles += cantidad;
                 return true;
             }
             return false;
         }
 
-        public boolean vender(int cantidad) {
-            if (cantidad > 0 && cantidad <= licenciasDisponibles) {
+        public boolean vender(int cantidad){
+            if(cantidad > 0 && cantidad <= licenciasDisponibles){
                 licenciasDisponibles -= cantidad;
                 licenciasVendidas += cantidad;
                 return true;
@@ -87,7 +90,6 @@ package Modelo;
                     ", precio=" + precio +
                     ", licenciasVendidas=" + licenciasVendidas +
                     ", licenciasDisponibles=" + licenciasDisponibles +
-
                     '}';
         }
     }
